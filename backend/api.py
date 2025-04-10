@@ -52,8 +52,8 @@ async def predict_image(file: UploadFile = File(...)):
     contents = await file.read()
     if len(contents) > 6 * 1024 * 1024:
         raise HTTPException(status_code=413, detail="File size exceeds limit.")
-    
-    image = Image.open(io.BytesIO(await file.read()))
+
+    image = Image.open(io.BytesIO(contents))
     image_tensor = transform(image).unsqueeze(0).to(device)
 
     with torch.no_grad():

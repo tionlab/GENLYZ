@@ -1,0 +1,27 @@
+{
+    "cli": {
+        "version": ">= 5.2.0"
+    },
+    "build": {
+        "preview": {
+            "distribution": "internal",
+            "android": {
+                "buildType": "apk"
+            },
+            "env": {
+                "JAVA_HOME": "/opt/build/jdk-17"
+            }
+        },
+        "production": {
+            "android": {
+                "buildType": "apk"
+            },
+            "env": {
+                "JAVA_HOME": "/opt/build/jdk-17"
+            }
+        }
+    },
+    "submit": {
+        "production": {}
+    }
+}
